@@ -7,6 +7,6 @@ Those projects were implemented during the first semester of Epitech Coding Acad
 ### 1. [treebay](/front-end/treebay) 
 Free ads website implemented with Laravel and designed with Tailwind.
 ### 2. [yowl](/front-end/yowl)
-Reddit-clone implemented with Vue, Vuex, Laravel and designed with Bootstrap.
+Reddit-clone implemented with Vue, Vuex, Laravel, sketched on Figma and designed with Bootstrap.
 ### 3. [trello_clone](/front-end/trello_clone) 
 Trello-clone (front-only) implemented with Vue and designed with Bootstrap.
