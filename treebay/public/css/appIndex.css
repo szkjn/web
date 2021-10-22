@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/* ------------ GLOBAL SETTINGS ------------ */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+/* presentation */
+#presentation{
+    width: 80%;
+    margin-top: 60px;
+    margin-left:10%;
+    margin-right:10%;
+    height: 900px;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #F9F9F9;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.intro{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.intro h2{
+    display: flex;
+    position: relative;
+    color:#575756;
+    margin-top: 30px;
+    font-size: 20px;
+   align-self: center;
+   margin-bottom: 30px;
+}
+
+.pres_card{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 400px;
+    background-color: #F9F9F9;
+}
+
+.pres_img{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    height: 400px;
+    width: 400px;
+}
+.pres_img img {
+    display: flex;
+    position: relative;
+    align-self: center;
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: blanchedalmond;
+}
+
+
+.pres_text{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+
+}
+
+.pres_text h3{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color:#575756;
+    margin-bottom: 10px;
+}
+
+.pres_text p, .intro{
+    display: flex;
+    position: relative;
+    color: #BFC3C6;
+    margin-top: 15px;
+    font-size: 15px;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+
+/* choice forest and tree card */
+#choice_card{
+    width: 80%;
+    height: 600px;
+    margin-top: 60px;
+    margin-left:10%;
+    margin-right:10%;
+    display:flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #F9F9F9;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#tree_card, #forest_card{
+    margin-top: 25px;
+    width: 400px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 25px;
+}
+
+#tree_card img, #forest_card img{
+    width: 400px;
+    height: 220px;
+    border-radius: 10px 10px 0 0;
+}
+
+#tree_card h3, #forest_card h3{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin-top: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+    color:#575756;
+    margin-bottom: 10px;
+}
+
+.tree_text, .forest_text{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    
+}
+
+.tree_text p, .forest_text p{
+    display: flex;
+    position: relative;
+    color: #BFC3C6;
+    margin-top: 15px;
+    font-size: 15px;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+
+.tree_button, .forest_button{
+    display: flex;
+    position: relative;
+    align-self: center;
+    margin-top: 50px;
+    width: 80%;
+    height: 50px;
+    background-color: #508045;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    border: none;
+}
+
+
+footer {
+    /* display: flex;
+    position: relative;
+    width: 100%;
+    height: 350px; */
+    /* background-image: url('../images/banner.jpg'); */
+}

@@ -1,0 +1,50 @@
+
+{
+    "Nickname": "Pseudo",
+    "E-Mail Address": "Adresse mail",
+    "Password": "Mot de passe",
+    "Remember Me": "Se souvenir de moi",
+    "Forgot Your Password?": "Mot de passe oublié",
+ 
+    "Profile": "Profil",
+    "Account": "Mon Compte",
+
+
+ 
+    "About": "À propos",
+    "Ads": "Annonces",
+    "Post your Ad": "Poster une annonce",
+    "Logout": "Déconnexion",
+ 
+    "Last Name": "Nom",
+    "First Name": "Prénom",
+    "Address": "Adresse",
+    "Additional Address": "Adresse complémentaire",
+    "ZIP CODE": "Code postale",
+    "Town": "Ville",
+    "Phone Number": "Numéro de téléphone",
+    "Change Password": "Changer de mot de passe",
+    "Old Password": "Ancien mot de passe",
+    "New Password": "Nouveau mot de passe",
+    "New Confirm Password": "Confirmer le nouveau mot de passe",
+    "Update Password": "Modifier le mot de passe",
+    "VALIDATE": "VALIDER",
+    "All Ads": "Toutes les annonces",
+    "Top of the page": "Haut de la page",
+    "posted by": "posté par",
+
+    "Search...": "Tapez votre recherche...",
+    "Category": "Catégorie",
+    "Location": "Localisation",
+    "Order by": "Trier par",
+
+    "Edit multiple ads": "Éditer plusieurs annonces",
+    "Edit your Ad": "Éditer votre annonce",
+    "Title": "Titre",
+    "Surface Area": "Surface",
+    "Price": "Prix",
+    "Description": "Description",
+    "Upload a picture": "Uploader une image",
+    "Cart": "Pannier"
+
+}

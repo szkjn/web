@@ -1,0 +1,476 @@
+#admin-content{
+    display: flex;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1320px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.admin-login_menu {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    width: 280px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#management {
+    display: flex;
+    align-items: baseline;
+    width: 1320px;
+    background-color: #f1f1f1;
+    height: auto;
+    padding: 30px;
+    border-bottom-left-radius: 10px 10px;
+    border-bottom-right-radius: 10px 10px;
+    margin-bottom: 30px;
+}
+
+.title-admin{
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+    padding: 20px;
+    background-color: rgb(51, 51, 51);
+    text-align: center;
+    width: 100%;
+}
+
+.title-admin p{
+    font-family: 'Roboto';
+    font-size: 40px;
+    color:#fff;
+}
+
+#displaying_data {
+    display: flex;
+    width: 1320px;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+    margin-bottom: 15px;
+}
+.crud_nav{
+    width: 100%;
+}
+td, th {
+	padding: 10px;
+    
+}
+th {
+    font-family: 'Roboto', sans-serif;
+	background-color: rgb(8, 109, 224);
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	border: 1px solid rgb(4, 80, 167);
+}
+td {
+    font-family: 'Nunito', sans-serif;
+    background-color:#FFFFFF;
+    border: 1px solid #dddfe1;
+    overflow-y: scroll;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: auto;
+    resize: horizontal;
+    text-align: center;
+    padding: 20px;
+}
+tr {
+	background-color: #f9fafb;
+}
+tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+
+/* .pagination {
+    font-family: 'Nunito', sans-serif;
+	list-style-type: none;
+	padding: 10px 0;
+	display: inline-flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+}
+.pagination li {
+	box-sizing: border-box;
+	padding-right: 10px;
+}
+.pagination li a {
+	box-sizing: border-box;
+	background-color: #e2e6e6;
+	padding: 8px;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	color: #616872;
+}
+.pagination li a:hover {
+	background-color: rgb(8, 109, 224);
+    color: #fff;
+}
+.pagination .next a, .pagination .prev a {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+.pagination .currentpage a {
+	background-color: #333;
+	color: #fff;
+}
+.pagination .currentpage a:hover {
+	background-color: #000;
+} */
+
+.edit{
+    width: 32px;
+    height: 32px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background-image: url(../images/admin/edit_b&w.png);
+    background-position: center;
+    background-color: #ffffff;
+}
+.trash{
+    width: 32px;
+    height: 32px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    background-image: url(../images/admin/trash_b&w.png);
+    background-position: center;
+    background-color: #ffffff;
+}
+
+.select-category{
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    appearance: none;
+    background: url(../images/arrow-down-blue.png) no-repeat 95% 50%;
+    font-family: 'Nunito', sans-serif;
+    color: #555;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    width: 130px;
+}
+
+.input-admin{
+    -moz-appearance: none; 
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: 'Nunito', sans-serif;
+    color: #555;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    width: 90%;
+}
+.menu-buttons{
+    padding: 5px;
+    width: 20px;
+    display: inherit;
+    width: 100%;
+}
+
+.button-showUser{
+    background-color: rgb(8, 109, 224);
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-showUser-activ{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-showProduct{
+    background-color: rgb(8, 109, 224);
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-showProduct-activ{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-showCategory{
+    background-color: rgb(8, 109, 224);
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-showCategory-activ{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: 8% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-addProduct{
+    background-color: rgb(59, 163, 38);
+    background-repeat: no-repeat;
+    background-position: 10% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-addProduct-activ{
+    background-color: #333;
+    background-repeat: no-repeat;
+    background-position: 10% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+/* .button-addCategory{
+    background-color: rgb(59, 163, 38);
+    background-image: url("../images/addCategory.png");
+    background-repeat: no-repeat;
+    background-position: 10% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+}
+
+.button-addCategory-activ{
+    background-color: #333;
+    background-image: url("../images/addCategory.png");
+    background-repeat: no-repeat;
+    background-position: 10% 48%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px 20px 40px;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    width:240px;
+    cursor: pointer;
+} */
+
+.button-addProduct-small{
+    background-color: rgb(59, 163, 38);
+    background-repeat: no-repeat;
+    background-position: 9% 50%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    width: 130px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-showUser:hover, .button-showCategory:hover, .button-showProduct:hover{
+    background-color: rgb(59, 163, 38);
+    color: #fff;
+}
+
+.button-addProduct:hover, .button-addCategory:hover, .button-addProduct-small:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+.button-admin{
+    background-color: rgb(8, 109, 224);
+    background-repeat: no-repeat;
+    background-position: 8% 45%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px 10px 40px;
+    font-size: 18px;
+    line-height: 18px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-admin:hover{
+    background-color: rgb(29, 151, 4);
+    color: #fff;
+}
+
+.button-deleteSelection{
+background-color: rgb(224, 8, 80);
+background-repeat: no-repeat;
+background-position: 8% 47%;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 40px 10px 40px;
+font-size: 18px;
+line-height: 18px;
+width: 200px;
+cursor: pointer;
+}
+
+.button-deleteSelection:hover{
+    background-color: rgb(29, 151, 4);
+    color: #fff;
+}
+
+.button-admin{
+    background-color: rgb(8, 109, 224);
+    background-repeat: no-repeat;
+    background-position: 8% 45%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px 10px 40px;
+    font-size: 18px;
+    line-height: 18px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.button-admin:hover{
+    background-color: rgb(29, 151, 4);
+    color: #fff;
+}
+
+
+
+input[type=checkbox] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type=checkbox] {
+    -border-radius: 4px;
+    height: 20px;
+    width: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked {
+    background: rgb(224, 8, 80);
+    margin:0px;
+    position: relative;
+}
+
+input[type="checkbox"]:focus {
+    box-shadow: inset 0 1px 3px rgba(0,0,0, .1), 0 0 0 2px rgba(156, 199, 248, 0.678);
+}
+
+input[name=checkAllSubmit] {
+    display:none;
+  } 
+  
+input[name=checkAll]:checked ~ input[name=checkAllSubmit] {
+    display: block;
+    position: absolute;
+    top: 445px;
+    margin-left: 1109px;
+}
+

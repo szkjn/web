@@ -1,0 +1,516 @@
+<template>
+  <div class="container">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-xs-6">
+              <h2>Manage Users</h2>
+            </div>
+            <a class="btn btn-success" @click="create = true">Add New User</a>
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>IsAdmin</th>
+              <th>Updated At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="user in $store.state.users" :key="user.id">
+              <td>{{ user.id }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.is_admin }}</td>
+              <td>{{ user.updated_at }}</td>
+              <td>
+                <div class="btn-group" role="group">
+                  <a @click="newUser = user"><i class="fas fa-edit"></i></a>
+                  <a
+                    href="#deleteEmployeeModal"
+                    class="delete"
+                    data-toggle="modal"
+                    @click="deleteUser(user)"
+                    ><i class="fas fa-trash"></i
+                  ></a>
+                </div>
+              </td>
+              <td v-if="newUser.id == user.id">
+                <transition name="modal">
+                  <div class="card-mask">
+                    <div class="card-wrapper">
+                      <div class="card-container">
+                        <body class="d-flex flex-column">
+                          <div>
+                            <div @click="newUser = ''" id="close">
+                              <svg
+                                class="m-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                              </svg>
+                            </div>
+                          </div>
+                          <form @submit.prevent="editUser" class="catForm">
+                            <div class="modal-header">
+                              <h4 class="modal-title">Edit user</h4>
+                            </div>
+                            <div class="modal-body">
+                              <div class="form-group">
+                                <label>Name</label>
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  name="name"
+                                  v-model="user.name"
+                                />
+                                <label>Email</label>
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  name="name"
+                                  v-model="user.email"
+                                />
+                                <label>Password</label>
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  name="name"
+                                  v-model="user.password"
+                                />
+                                <label>Admin</label>
+                                <input
+                                  class="form-control"
+                                  type="text"
+                                  name="name"
+                                  v-model="user.is_admin"
+                                />
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <input
+                                type="button"
+                                class="btn btn-default"
+                                value="Cancel"
+                                @click="newUser = ''"
+                              />
+                              <input
+                                type="submit"
+                                class="btn btn-info"
+                                value="Save"
+                              />
+                            </div>
+                          </form>
+                        </body>
+                      </div>
+                    </div>
+                  </div>
+                </transition>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <CreateUser v-if="create" @hideForm="hideForm" @userSaved="hideForm" />
+  </div>
+</template>
+
+<script>
+import CreateUser from "./CreateUser.vue";
+
+export default {
+  data() {
+    return {
+      newUser: "",
+      create: false,
+    };
+  },
+  components: {
+    CreateUser,
+  },
+  created() {
+    this.$store.dispatch("fetchUsers");
+  },
+  methods: {
+    deleteUser(user) {
+      this.$store.state.currentUser = user;
+      this.$store.dispatch("deleteUser");
+    },
+    hideForm() {
+      this.create = false;
+    },
+    editUser() {
+      this.$store.state.currentUser = this.newUser;
+      this.$store.dispatch("updateUser");
+      this.newUser = "";
+    },
+  },
+};
+</script>
+
+<style scope>
+body {
+  color: #566787;
+  background: #f5f5f5;
+  font-family: "Varela Round", sans-serif;
+  font-size: 13px;
+}
+.table-responsive {
+  margin: 30px 0;
+}
+.table-wrapper {
+  min-width: 1000px;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.table-title {
+  padding-bottom: 15px;
+  background: #435d7d;
+  color: #fff;
+  padding: 16px 30px;
+  margin: -20px -25px 10px;
+  border-radius: 3px 3px 0 0;
+}
+.table-title h2 {
+  margin: 5px 0 0;
+  font-size: 24px;
+}
+.table-title .btn-group {
+  float: right;
+}
+.table-title .btn {
+  color: #fff;
+  float: right;
+  font-size: 13px;
+  border: none;
+  min-width: 50px;
+  border-radius: 2px;
+  border: none;
+  outline: none !important;
+  margin-left: 10px;
+}
+.table-title .btn i {
+  float: left;
+  font-size: 21px;
+  margin-right: 5px;
+}
+.table-title .btn span {
+  float: left;
+  margin-top: 2px;
+}
+table.table tr th,
+table.table tr td {
+  border-color: #e9e9e9;
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+table.table tr th:first-child {
+  width: 60px;
+}
+table.table tr th:last-child {
+  width: 100px;
+}
+table.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fcfcfc;
+}
+table.table-striped.table-hover tbody tr:hover {
+  background: #f5f5f5;
+}
+table.table th i {
+  font-size: 13px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+table.table td:last-child i {
+  opacity: 0.9;
+  font-size: 22px;
+  margin: 0 5px;
+}
+table.table td a {
+  font-weight: bold;
+  color: #566787;
+  display: inline-block;
+  text-decoration: none;
+  outline: none !important;
+}
+table.table td a:hover {
+  color: #2196f3;
+}
+table.table td a.edit {
+  color: #ffc107;
+}
+table.table td a.delete {
+  color: #f44336;
+}
+table.table td i {
+  font-size: 19px;
+}
+table.table .avatar {
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.pagination {
+  float: right;
+  margin: 0 0 5px;
+}
+.pagination li a {
+  border: none;
+  font-size: 13px;
+  min-width: 30px;
+  min-height: 30px;
+  color: #999;
+  margin: 0 2px;
+  line-height: 30px;
+  border-radius: 2px !important;
+  text-align: center;
+  padding: 0 6px;
+}
+.pagination li a:hover {
+  color: #666;
+}
+.pagination li.active a,
+.pagination li.active a.page-link {
+  background: #03a9f4;
+}
+.pagination li.active a:hover {
+  background: #0397d6;
+}
+.pagination li.disabled i {
+  color: #ccc;
+}
+.pagination li i {
+  font-size: 16px;
+  padding-top: 6px;
+}
+.hint-text {
+  float: left;
+  margin-top: 10px;
+  font-size: 13px;
+}
+/* Custom checkbox */
+.custom-checkbox {
+  position: relative;
+}
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  margin: 5px 0 0 3px;
+  z-index: 9;
+}
+.custom-checkbox label:before {
+  width: 18px;
+  height: 18px;
+}
+.custom-checkbox label:before {
+  content: "";
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: text-top;
+  background: white;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  transform: inherit;
+  z-index: 3;
+  transform: rotateZ(45deg);
+}
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+  border-color: #03a9f4;
+  background: #03a9f4;
+}
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  border-color: #fff;
+}
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
+  color: #b8b8b8;
+  cursor: auto;
+  box-shadow: none;
+  background: #ddd;
+}
+/* Modal styles */
+.modal .modal-dialog {
+  max-width: 400px;
+}
+.modal .modal-header,
+.modal .modal-body,
+.modal .modal-footer {
+  padding: 20px 30px;
+}
+.modal .modal-content {
+  border-radius: 3px;
+}
+.modal .modal-footer {
+  background: #ecf0f1;
+  border-radius: 0 0 3px 3px;
+}
+.modal .modal-title {
+  display: inline-block;
+}
+.modal .form-control {
+  border-radius: 2px;
+  box-shadow: none;
+  border-color: #dddddd;
+}
+.modal textarea.form-control {
+  resize: vertical;
+}
+.modal .btn {
+  border-radius: 2px;
+  min-width: 100px;
+}
+.modal form label {
+  font-weight: normal;
+}
+
+body {
+  background: #ddd;
+}
+a {
+  color: #666;
+}
+a:hover {
+  cursor: pointer;
+  color: #333;
+}
+h2,
+.title {
+  font-size: 1.4rem;
+  padding: 0;
+  margin: 0;
+}
+svg {
+  width: 25px;
+}
+#close svg {
+  position: absolute;
+  width: 35px;
+  color: #eee;
+}
+#close svg:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+.card-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.card-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  height: auto;
+}
+
+.card-container {
+  width: 92vw;
+  max-width: 750px;
+  margin: 10px auto;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+  height: auto;
+  overflow-y: scroll;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.card-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+header {
+  background: orange;
+  height: 120px;
+  opacity: 0.5;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+body {
+  background-color: inherit;
+  /* padding: 20px 10px; */
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.card-comment-header {
+  display: flex;
+  align-items: center;
+}
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="card" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the card transition by editing
+ * these styles.
+ */
+
+.card-enter {
+  opacity: 0;
+}
+
+.card-leave-active {
+  opacity: 0;
+}
+
+.card-enter .card-container,
+.card-leave-active .card-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.catForm {
+  margin: 2rem 0 !important;
+}
+</style>

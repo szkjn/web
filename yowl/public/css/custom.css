@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Monofett&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Monofett&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: "Roboto Mono";
+    margin: 0;
+    padding: 0;
+}
+/* main::before {
+    display: block;
+    content: '';
+    height: 50px;
+} */
+svg {
+    width: 20px;
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+.bg-yowl {
+    background: #5846da;
+}
+.bg-yowl-light {
+    background: #bdb8e9;
+}
+.mono {
+    font-family: "Roboto Mono";
+}
+.roboto-classic {
+    font-family: 'Roboto';
+    color: #999;
+    font-size: 0.7rem;
+}
+
+.navbar {
+    background: #5846da;
+    font-family: "Roboto Mono", monospace;
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 50px;
+}
+
+#logo {
+    font-family: "Monofett", monospace;
+    color: white;
+    font-size: 2.5rem;
+    padding: 0;
+}
+#navbar a {
+    color: white;
+}
+#navbar a:hover {
+    text-decoration: underline;
+}
+
+.thumb {
+    cursor: pointer;
+}
+.thumb.up:hover {
+    fill: rgb(138, 245, 138);
+    transition-duration: 0.2s;
+}
+.thumb.down:hover {
+    fill: rgb(245, 138, 138);
+    transition-duration: 0.2s;
+}
+.btn.rounded-pill {
+    color: #777 !important;
+}
+.btn.rounded-pill:hover {
+    /* background: #f0e9ff; */
+    /* text-decoration: underline; */
+    color: #5846DA !important;
+    border: 1px solid #5846DA !important;
+    font-weight: 500;
+    transition-duration: 0.2s;
+}
+.btn.rounded-pill.bg-yowl-light {
+    background: #ebe9ff !important;
+}
+
+.userForm {
+    justify-content: center;
+    margin:2rem 0;
+}
+
+.userAdd{
+    margin:3rem 0 0rem;
+}
+
+.addButton{
+    width:100%;
+    justify-content:flex-end;
+}
+
+.dropdown-menu-right a{
+    color:#5846da !important;
+}
