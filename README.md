@@ -1,8 +1,8 @@
-# Front-end Portfolio
+# Web Development Portfolio
 
 ![front-portfolio](https://user-images.githubusercontent.com/84317349/138428936-d21249b8-5ca8-436b-afba-47448c62e21a.png)
 
-Those projects were implemented during the first semester of Epitech Coding Academy course. In each of them, I was in charge of the UI/UX design (Bootstrap 5, tailwind) + some backend implementation.
+Those projects were implemented during the first semester of Epitech Coding Academy course. In each of them, I was in charge of the UI/UX design (Vue, Bootstrap 5, tailwind) + some backend implementation (Laravel).
 
 ### 1. [treebay](/front-end/treebay) 
 Free ads website implemented with Laravel and designed with Tailwind.
